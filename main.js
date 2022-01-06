@@ -23,9 +23,33 @@ switch(command){
         console.log("Please enter a valid command");
         break;
 }
-
+function treeHelper(dirPath,indent){
+    let isFile = fs.lstatSync(dirPath).isFile();
+    if(isFile){
+        console.log(indent+ "|--" + path.basename(dirPath));
+    }
+    else{
+        console.log(indent + "|__" + path.basename(dirPath));
+        let files = fs.readdirSync(dirPath);
+        for(let i=0;i<files.length;i++){
+            let filePath = path.join(dirPath,files[i]);
+            treeHelper(filePath,indent+"\t");
+        }
+    }
+}
 function treeFn(directoryPath){
-    console.log("Tree command implemented for", directoryPath);
+    if(directoryPath===undefined){          //directoryPath is given by the user
+        console.log("Please enter a valid path");
+        return;
+    }
+    let doesExist=fs.existsSync(directoryPath);
+    if(doesExist){
+        treeHelper(directoryPath,"");
+    }
+    else{
+        console.log("Please enter a valid path");
+        return;
+    }
 }
 function organizeFn(directoryPath){
 //steps

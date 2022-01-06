@@ -1,0 +1,23 @@
+{
+  "name": "fileSystemOrganizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikhilsrivastava41/fileSystemOrganizer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bin":{
+    "pep":"main.js"
+  },
+  "bugs": {
+    "url": "https://github.com/nikhilsrivastava41/fileSystemOrganizer/issues"
+  },
+  "homepage": "https://github.com/nikhilsrivastava41/fileSystemOrganizer#readme"
+}
